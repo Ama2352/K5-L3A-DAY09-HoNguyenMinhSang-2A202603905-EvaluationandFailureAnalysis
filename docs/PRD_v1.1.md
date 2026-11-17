@@ -8,7 +8,7 @@ Chạy offline trên claim đơn lẻ về giao trễ/hàng hỏng, phạm vi ow
 
 ## Tiêu chí đo được
 
-Baseline `E-swarm-20261118-2cd7`, eval set `2cd7aaf37bd0`, 14 × 5 trial, MockLLM. Số liệu dưới đây lấy tự động từ report, định nghĩa từ metric_spec.yaml.
+Baseline `E-swarm-20261118-925d`, eval set `925d5befaffc`, 14 × 5 trial, MockLLM. Số liệu dưới đây lấy tự động từ report, định nghĩa từ metric_spec.yaml.
 
 | Metric | Loại | Ngưỡng | Chặn release | Baseline |
 |---|---|---|---|---|
@@ -34,7 +34,7 @@ Tone judge chỉ dùng khi đạt floors κ≥0.6, P≥0.8, R≥0.7; helpful kh�
 
 CI eval-gate chạy tests, evalset check, swarm vs committed baseline, fixed phải merge và seeded_regression phải bị block rõ ở pass_rate. Eval owner Hồ Nguyễn Minh Sang xử lý mọi exit 1: tái hiện trace, tìm bước sai đầu tiên, thêm regression test, sửa implementation rồi chạy lại; không sửa report hoặc hạ ngưỡng. Bài nộp cần PR trong fork và chỉ merge sau CI xanh.
 
-V2 dùng `E-swarm-20261118-afdc` / `afdcc3a796de`, thêm slice blocking money_movement/adversarial/denial, pass_hat_5≥0.80 và integrity/ratchet. eval-gate-v2 phải kill 3/3 public mutants và không chặn fixed/honest_refactor. Các bẫy NaN, missing rows, cherry-picked seeds, loosened spec, duplicate rows và grader crash đều bị chặn.
+V2 dùng `E-swarm-20261118-f535` / `f535ef397198`, thêm slice blocking money_movement/adversarial/denial, pass_hat_5≥0.80 và integrity/ratchet. eval-gate-v2 phải kill 3/3 public mutants và không chặn fixed/honest_refactor. Các bẫy NaN, missing rows, cherry-picked seeds, loosened spec, duplicate rows và grader crash đều bị chặn.
 
 ## Rủi ro còn mở và thay đổi phiên bản
 

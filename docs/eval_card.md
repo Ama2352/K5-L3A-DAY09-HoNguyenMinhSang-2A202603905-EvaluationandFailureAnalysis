@@ -2,7 +2,7 @@
 
 Eval owner: Hồ Nguyễn Minh Sang (2A202603905). Day 8 source: original commit `3445838` from the provided Lab8 repository, unchanged. Evaluator source fingerprint (graders + gate + stats): `a81c435a113f`; final Git commit/PR provides the code version.
 
-V1 baseline `E-swarm-20261118-2cd7`, SHA `2cd7aaf37bd0`; fixed `E-fixed-20261118-2cd7`; regression `E-seeded_regression-20261118-2cd7`. Metric spec 1.0, seeds 11/22/33/44/55. 14 public claims × 5 seeds, separate labels, provenance and deterministic MockLLM.
+V1 baseline `E-swarm-20261118-925d`, SHA `925d5befaffc`; fixed `E-fixed-20261118-925d`; regression `E-seeded_regression-20261118-925d`. Metric spec 1.0, seeds 11/22/33/44/55. 14 public claims × 5 seeds, separate labels, provenance and deterministic MockLLM.
 
 | Metric | Baseline | Fixed | Seeded regression |
 |---|---:|---:|---:|
@@ -26,7 +26,7 @@ Tone judge κ=0.757, P=0.857, R=0.8: calibrated for tone only. Helpful rejected 
 
 ## V2 — slices, reliability and integrity
 
-Baseline `E-swarm-20261118-afdc`, SHA `afdcc3a796de`, 28 items × 5 seeds, metric spec 2.0. V2 adds 14 instructor adversarial claims; every attacked FM has ≥3 items. Baseline pass_rate=0.9786, pass_hat_5=0.8929.
+Baseline `E-swarm-20261118-f535`, SHA `f535ef397198`, 28 items × 5 seeds, metric spec 2.0. V2 adds 14 instructor adversarial claims; every attacked FM has ≥3 items. Baseline pass_rate=0.9786, pass_hat_5=0.8929.
 
 `money_movement` pass_rate ≥0.90, `adversarial` ≥0.85, `denial` ≥0.90; all blocking and no_significant_drop. money_movement isolates clause-sum regressions hidden by the global mean. pass_hat_5 ≥0.80 is blocking and captures one failing trial among five even when average pass_rate stays high. The outcome metrics still work when no override event is emitted.
 

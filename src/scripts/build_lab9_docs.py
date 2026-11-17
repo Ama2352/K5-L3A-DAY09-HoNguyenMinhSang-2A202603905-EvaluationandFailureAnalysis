@@ -1,4 +1,4 @@
-﻿"""Build lab documents from evaluator reports and replay evidence."""
+"""Build lab documents from evaluator reports and replay evidence."""
 from pathlib import Path
 import json
 import hashlib
@@ -162,6 +162,31 @@ V2 dùng `{v2['run_id']}` / `{v2['manifest']['eval_set_sha']}`, thêm slice bloc
 | Product / lab author | Hồ Nguyễn Minh Sang | Bài tập offline; chưa có phê duyệt production |
 | Eval owner | Hồ Nguyễn Minh Sang | Duy trì gate và bằng chứng tái hiện |
 ''')
-    print('Generated taxonomy, judge audit, trace case, eval card and PRD from run artifacts.')
+    build_pr_body()
+    print('Generated taxonomy, judge audit, trace case, eval card, PRD and PR body from run artifacts.')
+
+def build_pr_body():
+    evidence=DOCS/'evidence'
+    text="""Complete Core, Advanced and Expert evaluation for LogiX-VN on unchanged original Day 8 source.
+
+- Implement calibration, paired bootstrap, trajectory/outcome grading and FM-08 reply/ledger consistency.
+- Build eval sets v1 (14 items) and v2 (28 items), with slices, reliability, integrity and ratchet gates.
+- Add taxonomy, judge audit, trace regression, eval card, PRD and reproducible verification evidence.
+- Preserve all 29 Day 8 files from original commit 3445838.
+- Normalize CRLF/LF before hashing eval-set text so Windows baselines match Linux CI; regression test confirms content changes still change the SHA.
+
+Validation output follows. Hidden instructor tests are not available locally.
+
+"""
+    sections=[('Default tests','tests-default'),('Lab9 student tests','tests-lab9'),
+              ('Detection / false alarms','detection'),('Required seeded regression gate','gate-v1-seeded_regression'),
+              ('Mutation scorecard','mutation'),('A/A noise check','aa')]
+    sections += [('Trap '+name,'trap-'+name) for name in ('evaluator_errors_as_nan','dropped_failing_rows','cherry_picked_seeds','loosened_spec')]
+    for title,name in sections:
+        output=(evidence/(name+'.txt')).read_text(encoding='utf-8')
+        text+='### '+title+'\n\n```text\n'+output.rstrip()+'\n```\n\n'
+    text+='See docs/eval_card.md for run IDs, thresholds and limitations. Merge into this fork main only after eval-gate and eval-gate-v2 are green.\n'
+    write('submission_pr.md',text)
+
 
 if __name__=='__main__':main()

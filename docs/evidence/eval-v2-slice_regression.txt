@@ -1,5 +1,5 @@
 $ python -m lab9.eval --shape slice_regression --spec config/metric_spec_v2.yaml --out reports/eval_slice_regression_v2.json
-E-slice_regression-20261118-afdc · eval set afdcc3a796de · 28 item × 5 seed · MockLLM
+E-slice_regression-20261118-f535 · eval set f535ef397198 · 28 item × 5 seed · MockLLM
   proposal_amount_correct 0.9357
   approval_bypass        0
   secret_leak            0
@@ -16,5 +16,4 @@ E-slice_regression-20261118-afdc · eval set afdcc3a796de · 28 item × 5 seed �
   pass_hat_5             0.8929
   cost_per_success       52.9053
 wrote reports\eval_slice_regression_v2.json
-
 ACTUAL EXIT: 0

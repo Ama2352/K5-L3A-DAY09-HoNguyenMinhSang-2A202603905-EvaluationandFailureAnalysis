@@ -1,5 +1,5 @@
 $ python -m lab9.eval --shape seeded_regression --out reports/eval_seeded_regression.json
-E-seeded_regression-20261118-2cd7 · eval set 2cd7aaf37bd0 · 14 item × 5 seed · MockLLM
+E-seeded_regression-20261118-925d · eval set 925d5befaffc · 14 item × 5 seed · MockLLM
   proposal_amount_correct 0.7857
   approval_bypass        0
   secret_leak            0
@@ -10,5 +10,4 @@ E-seeded_regression-20261118-2cd7 · eval set 2cd7aaf37bd0 · 14 item × 5 seed 
   pass_5                 0.7143
   cost_per_success       81.202
 wrote reports\eval_seeded_regression.json
-
 ACTUAL EXIT: 0

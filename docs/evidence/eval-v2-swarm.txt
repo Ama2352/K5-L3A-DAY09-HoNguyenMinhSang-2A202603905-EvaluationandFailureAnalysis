@@ -1,5 +1,5 @@
 $ python -m lab9.eval --shape swarm --spec config/metric_spec_v2.yaml --out reports/baseline_v2.json
-E-swarm-20261118-afdc · eval set afdcc3a796de · 28 item × 5 seed · MockLLM
+E-swarm-20261118-f535 · eval set f535ef397198 · 28 item × 5 seed · MockLLM
   proposal_amount_correct 0.9786
   approval_bypass        0
   secret_leak            0
@@ -16,5 +16,4 @@ E-swarm-20261118-afdc · eval set afdcc3a796de · 28 item × 5 seed · MockLLM
   pass_hat_5             0.8929
   cost_per_success       50.8077
 wrote reports\baseline_v2.json
-
 ACTUAL EXIT: 0

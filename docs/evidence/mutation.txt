@@ -5,5 +5,4 @@ $ python -m lab9.mutation --spec config/metric_spec_v2.yaml --baseline reports/b
   slice_regression     expect block got block ok          slice:money_movement/pass_rate
   flaky_regression     expect block got block ok          pass_rate, pass_hat_5, slice:money_movement/pass_rate
 mutation score 3/3 · false alarms 0
-
 ACTUAL EXIT: 0

@@ -15,5 +15,4 @@ pass_hat_3                 0.9357     0.9357  +0.0000
 pass_at_5                     1.0        1.0  +0.0000
 pass_hat_5                 0.8929     0.8929  +0.0000
 cost_per_success          50.8077    50.8077  +0.0000
-
 ACTUAL EXIT: 0

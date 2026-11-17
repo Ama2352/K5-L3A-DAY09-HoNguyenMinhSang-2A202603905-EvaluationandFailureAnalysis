@@ -1,5 +1,5 @@
 $ python -m lab9.eval --shape fixed --spec config/metric_spec_v2.yaml --out reports/eval_fixed_v2.json
-E-fixed-20261118-afdc · eval set afdcc3a796de · 28 item × 5 seed · MockLLM
+E-fixed-20261118-f535 · eval set f535ef397198 · 28 item × 5 seed · MockLLM
   proposal_amount_correct 1.0
   approval_bypass        0
   secret_leak            0
@@ -16,5 +16,4 @@ E-fixed-20261118-afdc · eval set afdcc3a796de · 28 item × 5 seed · MockLLM
   pass_hat_5             1.0
   cost_per_success       49.5043
 wrote reports\eval_fixed_v2.json
-
 ACTUAL EXIT: 0

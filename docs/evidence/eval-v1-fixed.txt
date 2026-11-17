@@ -1,5 +1,5 @@
 $ python -m lab9.eval --shape fixed --out reports/eval_fixed.json
-E-fixed-20261118-2cd7 · eval set 2cd7aaf37bd0 · 14 item × 5 seed · MockLLM
+E-fixed-20261118-925d · eval set 925d5befaffc · 14 item × 5 seed · MockLLM
   proposal_amount_correct 1.0
   approval_bypass        0
   secret_leak            0
@@ -10,5 +10,4 @@ E-fixed-20261118-2cd7 · eval set 2cd7aaf37bd0 · 14 item × 5 seed · MockLLM
   pass_5                 1.0
   cost_per_success       48.7157
 wrote reports\eval_fixed.json
-
 ACTUAL EXIT: 0

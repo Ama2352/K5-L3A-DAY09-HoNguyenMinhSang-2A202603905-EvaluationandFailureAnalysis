@@ -1,5 +1,4 @@
 $ python -m pytest -q
 .......................................................                  [100%]
-55 passed, 284 deselected in 22.53s
-
+55 passed, 285 deselected in 10.96s
 ACTUAL EXIT: 0

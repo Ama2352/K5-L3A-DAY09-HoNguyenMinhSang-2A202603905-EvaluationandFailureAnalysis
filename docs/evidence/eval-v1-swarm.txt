@@ -1,5 +1,5 @@
 $ python -m lab9.eval --shape swarm --out reports/baseline_v1.json
-E-swarm-20261118-2cd7 · eval set 2cd7aaf37bd0 · 14 item × 5 seed · MockLLM
+E-swarm-20261118-925d · eval set 925d5befaffc · 14 item × 5 seed · MockLLM
   proposal_amount_correct 0.9857
   approval_bypass        0
   secret_leak            0
@@ -10,5 +10,4 @@ E-swarm-20261118-2cd7 · eval set 2cd7aaf37bd0 · 14 item × 5 seed · MockLLM
   pass_5                 0.9286
   cost_per_success       49.567
 wrote reports\baseline_v1.json
-
 ACTUAL EXIT: 0

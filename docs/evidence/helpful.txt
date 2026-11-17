@@ -7,5 +7,4 @@ fail rate observed 0.09 -> corrected 0.3
   HL-028 human=FAIL judge=PASS | Dạ, LogiX thành thật xin lỗi anh/chị vì sự bất tiện này và rất trân trọng sự kiên nhẫn của
   HL-035 human=FAIL judge=PASS | Dạ, Một lần nữa LogiX xin lỗi vì trải nghiệm chưa tốt, mong anh/chị thông cảm và tiếp tục
 FAIL floors {'kappa': 0.6, 'precision': 0.8, 'recall': 0.7}
-
 ACTUAL EXIT: 1

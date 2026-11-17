@@ -1,5 +1,5 @@
 $ python -m lab9.eval --shape seeded_regression --spec config/metric_spec_v2.yaml --out reports/eval_seeded_regression_v2.json
-E-seeded_regression-20261118-afdc · eval set afdcc3a796de · 28 item × 5 seed · MockLLM
+E-seeded_regression-20261118-f535 · eval set f535ef397198 · 28 item × 5 seed · MockLLM
   proposal_amount_correct 0.7143
   approval_bypass        0
   secret_leak            0
@@ -16,5 +16,4 @@ E-seeded_regression-20261118-afdc · eval set afdcc3a796de · 28 item × 5 seed 
   pass_hat_5             0.6429
   cost_per_success       91.4522
 wrote reports\eval_seeded_regression_v2.json
-
 ACTUAL EXIT: 0
