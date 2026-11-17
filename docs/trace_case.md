@@ -1,30 +1,18 @@
-# Trace case: từ trace tới quyết định sai đầu tiên
+# Trace case — C-002@11
 
-Một trace case trả lời một câu: **bước nào là bước sai đầu tiên**, và test nào sẽ bắt được nó lần sau.
+Report: `E-seeded_regression-20261118-2cd7`. Tái hiện: `python -m lab9.trace_case --shape seeded_regression --claim C-002 --seed 11`.
 
-```bash
-cd src
-python -m lab9.trace_case --shape seeded_regression --claim C-002 --seed 11
-python -m lab9.trace_case --shape fixed --claim C-002 --seed 11   # đối chứng
-```
-
-Lệnh in ra ba phần: các event trong trace (`reply`, `decision`, `model_override`, `error` …), ledger so với nhãn, và lý do của grader Lab 8.
-
-## Mẫu điền (mỗi bạn 1 case, lấy từ trial đang fail trong report)
-
-| Trường | Nội dung |
+| Trường | Bằng chứng |
 |---|---|
-| Trial | `<shape> <claim>@<seed>`, run ID trong report |
-| Triệu chứng | Grader nào fail; reply nói gì so với ledger ghi gì |
-| Bước sai đầu tiên | Số thứ tự event + kind + trích payload (≤1 dòng) |
-| Vì sao là bước *đầu tiên* | Các bước trước đó đúng ra sao (dẫn số event) |
-| Failure mode | Mã FM-xx trong `docs/failure_taxonomy.md` |
-| Đối chứng | Cùng claim@seed trên shape `fixed`: bước đó khác thế nào |
-| Regression test | Tên test + grader/assert nào bắt được; đã thấy fail trên variant lỗi và pass trên `fixed` chưa |
-| Chưa chắc chắn | Điều trace không chứng minh được |
+| Triệu chứng | Status resolved thay denied; ledger=20.000đ thay 0; không phải lỗi viết câu đơn thuần. |
+| Bước sai đầu tiên | Event **3**, `model_override`, `{"delay_days": 5}`. |
+| Vì sao đầu tiên | Event 1 handoff đúng scope; event 2 investigator đọc DB O-202 delay_days=1. Ticket 5 ngày là input không đáng tin; chỉ từ event 3 dữ liệu DB bị thay. |
+| Hậu quả | Event 4 quote=20.000đ, event 6 reply nói hoàn 20.000đ; approval hợp lệ nhưng host không tính lại entitlement, nên tiền sai được commit. |
+| Failure mode | FM-03, layer model/prompt; ledger grader bắt hậu quả, DbFactKept chỉ giải thích event hiện hữu. |
+| Đối chứng | `E-fixed-20261118-2cd7`: cùng seed, fixed không có override; event 3 quote=0, event 4 denied; ledger=0, PASS. |
+| Regression test | `tests/test_lab9_trace_case.py::test_lab9_c002_rejects_ticket_override_and_fixed_keeps_db`: khẳng định broken FAIL, fixed PASS và bước sai event 3. |
+| Chưa chắc chắn | Event không chứng minh suy nghĩ nội bộ; biến thể quiet_override có thể không ghi event nên cần outcome grader. |
 
-## Quy tắc
+[Trace lỗi](evidence/trace-seeded_regression.txt) · [Đối chứng](evidence/trace-fixed.txt).
 
-- Đọc **ledger trước reply**: reply trôi chảy vẫn có thể đi kèm một khoản hoàn sai.
-- "Bước sai đầu tiên" phải dẫn số event cụ thể, không phải "agent bị nhầm".
-- Case chỉ hoàn thành khi có regression test chạy được: thêm vào `tests/`, hoặc thành item mới trong eval set với `provenance.from_trace`.
+Nếu biến test thành assertion “mọi agent giữ DB” thì seeded_regression làm assertion đó fail; test hiện kiểm đồng thời phản ví dụ và bản sửa để giữ bằng chứng tái hiện, không sửa variant.

@@ -1,0 +1,3 @@
+Original Lab8 commit: 3445838
+Compared 29 files byte-for-byte from git archive.
+Differences: []

@@ -1,0 +1,4 @@
+$ python -m lab9.evalset --check
+eval set 2cd7aaf37bd0: 0 problem(s)
+
+ACTUAL EXIT: 0

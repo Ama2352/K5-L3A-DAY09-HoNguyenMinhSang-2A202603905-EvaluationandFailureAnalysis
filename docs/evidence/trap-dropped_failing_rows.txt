@@ -1,0 +1,12 @@
+$ python -m lab9.gate --pr reports/traps/dropped_failing_rows.json --baseline reports/baseline_v2.json --spec config/metric_spec_v2.yaml
+gate: PR E-slice_regression-20261118-afdc vs main E-swarm-20261118-afdc · eval set afdcc3a796de
+  INTEGRITY PR: dropped or duplicated rows
+  INTEGRITY PR: incomplete item/seed product
+  INTEGRITY PR: nonfinite/missing aggregate pass_at_3
+  INTEGRITY PR: nonfinite/missing aggregate pass_hat_3
+  INTEGRITY PR: nonfinite/missing aggregate pass_at_5
+  INTEGRITY PR: nonfinite/missing aggregate pass_hat_5
+  INTEGRITY PR item/seed multiset differs from baseline
+exit 1 — blocked: integrity
+
+ACTUAL EXIT: 1
