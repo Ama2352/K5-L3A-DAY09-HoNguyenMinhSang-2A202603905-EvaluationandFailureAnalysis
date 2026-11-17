@@ -58,3 +58,14 @@ def test_wrong_zero_proposal_is_detected_even_when_ledger_is_zero():
     assert ProposalAmountCorrect().evaluate(ctx(t,label)).value is False
     t['result']['proposal_amount']=35000
     assert ProposalAmountCorrect().evaluate(ctx(t,label)).value is True
+
+
+
+def test_evalset_hash_ignores_platform_line_endings(tmp_path):
+    from lab9.evalset import sha12
+    unix=tmp_path/'unix.jsonl'; windows=tmp_path/'windows.jsonl'
+    unix.write_bytes(b'{"claim_id":"C-001"}\n')
+    windows.write_bytes(b'{"claim_id":"C-001"}\r\n')
+    assert sha12(unix)==sha12(windows)
+    windows.write_bytes(b'{"claim_id":"C-002"}\r\n')
+    assert sha12(unix)!=sha12(windows)
