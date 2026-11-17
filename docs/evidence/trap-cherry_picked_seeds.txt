@@ -1,0 +1,9 @@
+$ python -m lab9.gate --pr reports/traps/cherry_picked_seeds.json --baseline reports/baseline_v2.json --spec config/metric_spec_v2.yaml
+gate: PR E-slice_regression-20261118-f535 vs main E-swarm-20261118-f535 · eval set f535ef397198
+  INTEGRITY PR: nonfinite/missing aggregate pass_at_3
+  INTEGRITY PR: nonfinite/missing aggregate pass_hat_3
+  INTEGRITY PR: nonfinite/missing aggregate pass_at_5
+  INTEGRITY PR: nonfinite/missing aggregate pass_hat_5
+  INTEGRITY PR item/seed multiset differs from baseline
+exit 1 — blocked: integrity
+ACTUAL EXIT: 1

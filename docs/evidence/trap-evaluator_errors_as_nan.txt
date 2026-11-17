@@ -1,0 +1,7 @@
+$ python -m lab9.gate --pr reports/traps/evaluator_errors_as_nan.json --baseline reports/baseline_v2.json --spec config/metric_spec_v2.yaml
+gate: PR E-slice_regression-20261118-f535 vs main E-swarm-20261118-f535 · eval set f535ef397198
+  INTEGRITY PR: missing/nonfinite row score proposal_amount_correct
+  INTEGRITY PR: missing/nonfinite row score refund_amount_correct
+  INTEGRITY PR: missing/nonfinite row score pass_rate
+exit 1 — blocked: integrity
+ACTUAL EXIT: 1
